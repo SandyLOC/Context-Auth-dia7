@@ -5,6 +5,7 @@ import { Link, Outlet } from "react-router-dom"
 import { useContext } from "react";                     // <== IMPORT 
 import { AuthContext } from "../context/auth.context";
 
+import ButtonLogout from "../components/ButtonLogout"
 
 const { Content, Footer, Header } = Layout
 
@@ -29,10 +30,7 @@ const pages = [
 		path: "/login",
 		title: "Login Page"
 	}*/
-	{
-		path: "/anonima",
-		title: "Ruta anonima"
-	},
+	
 ]
 
 function Root() {
@@ -55,6 +53,7 @@ function Root() {
 			/>
 			
 			)}
+			
 			{!isLoggedIn && (
 				<>
 				<Link to="/signup"> <button>Sign Up</button> </Link>
@@ -65,6 +64,7 @@ function Root() {
 				
 				</>
 			</Header>
+			{isLoggedIn && (<ButtonLogout/>)}
 			<Content
 				style={{
 					height: "100vh",

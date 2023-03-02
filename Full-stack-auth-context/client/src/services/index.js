@@ -15,7 +15,7 @@ export const getFolderDetailsByID = async (id) =>
 	await folderService.get(`/${id}`, header)
 
 export const createFolder = async (folderData) =>
-	await folderService.post("/", {header,folderData})
+	await folderService.post("/", folderData)
 
 // Memes
 export const createMeme = async (memeData) =>
